@@ -1,0 +1,27 @@
+default: "readwrite-db"
+readwrite-db:
+  driver: "sqlite3"
+  filepath: "./data/"
+  database: "products"
+  conn_max_lifetime: 10
+  max_idle_conns: 1
+  max_open_conns: 1
+  options:
+    - cache: "shared"
+      autocommit: true
+      mode: "rwc"
+      immutable: false
+      _timeout: "1000"
+      _mutex: "full"
+readonly-db:
+  driver: "sqlite3"
+  filepath: "./data/"
+  database: "products"
+  conn_max_lifetime: 10
+  max_idle_conns: 10
+  max_open_conns: 10
+  options:
+    - cache: "shared"
+      mode: "ro"
+      immutable: true
+      _timeout: "1000"

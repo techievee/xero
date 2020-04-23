@@ -23,7 +23,7 @@ func main() {
 
 	var (
 		config     *viper.Viper
-		configPath = "D:\\Xero\\xero\\config"
+		configPath = "./config"
 		err        error
 	)
 

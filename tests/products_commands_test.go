@@ -31,7 +31,7 @@ func TestMain(m *testing.M) {
 	// Init Config
 	var (
 		config     *viper.Viper
-		configPath = "D:\\Xero\\xero\\config"
+		configPath = "./config"
 		err        error
 	)
 
