@@ -3,7 +3,7 @@ service:
   host: ""
   port: "8080"
   tls:
-    enabled: false
+    enabled: true
     host: ""
     port: "8081"
     certificate: "./cert/cert.pem"
