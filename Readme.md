@@ -1,8 +1,39 @@
 ## Simple Application written in Golang with MySqllite Database
+> Golang 1.14 | Sqllite | EchoFramework | Elastic APM | ZAP Logger | Docker 
 
-The application uses Labstack/Echo framework.
+To Run the pre-built docker image, that automatically builds with every new push
+```
+docker run -p 8080:8080 -p 8081:8081 --name xeroApi techievee/xero:v1.0.0 /xeroProductAPI
+```
+The application exposes 
+*  8080 - For standard HTTP port
+*  8081 - For TLS port ( TLS Enabled by default from the config with self-signed certificate)
 
-It connects to the backend MySqllite Instance and performs a select query.
+## Configuration
+The application configuration can be specified as YAML and their config location can be specified using the -cnf environment variable, which defaults to current directory
+
+- config folder
+  - app.yaml
+    - app_env - prod: All debug logs are supressed in stdout, any other values: all logs enabled
+    - services - For specifying the port and TLS options
+  - mysqlite.yaml
+    - readwrite-db - Settings for running the write instance connection for mysqlite, Can have only 1 active connection
+    - readonly-db  - Settings for running immutable instance connection for mysqlite, Can have only any number of active connection
+  - mysqlite_test.yaml
+    - All setting to run the the unit testing, similar to mysqlite
+
+
+## Building the solution
+
+For building the solution, please 
+- Install the gcc and other developer tools
+- Copy the cert and config folders
+- create a folder where the db file resides 
+- RUN 
+    - CGO_ENABLED=1 go build -o /xeroProductAPI
+    
+> Pre-built solution for windows are available as ZIP in release folder
+
 
 ## API Endpoints
 
@@ -39,6 +70,8 @@ It connects to the backend MySqllite Instance and performs a select query.
 
 
 ## Data Models
+
+GET Endpoints returns their respective objects
 
 **Product:**
 ```
@@ -88,7 +121,9 @@ It connects to the backend MySqllite Instance and performs a select query.
 }
 ```
 
-
-
+Other endpoints, returns the ID of the object
+```
+ "5fafad6c-ba7f-448a-bd7f-430d986e2e46"
+```
 
 
