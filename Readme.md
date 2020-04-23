@@ -1,6 +1,8 @@
 ## Simple Application written in Golang with MySqllite Database
 > Golang 1.14 | Sqllite | EchoFramework | Elastic APM | ZAP Logger | Docker 
 
+[![<ORG_NAME>](https://circleci.com/gh/techievee/xero.svg?style=svg)](<LINK>)
+
 To Run the pre-built docker image, that automatically builds with every new push
 ```
 docker run -p 8080:8080 -p 8081:8081 --name xeroApi techievee/xero:v1.0.0 /xeroProductAPI
