@@ -34,6 +34,7 @@ For building the solution, please
     
 > Pre-built solution for windows are available as ZIP in release folder
 
+> NOTE: By setting the env variable, ELASTIC_APM_SERVER_URL=http://localhost:8200, the Endpoints and DB operation are traced to Elastic APM which can be visualized using Elastic Kibanna
 
 ## API Endpoints
 
