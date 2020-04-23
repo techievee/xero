@@ -1,7 +1,7 @@
 ## Simple Application written in Golang with MySqllite Database
 > Golang 1.14 | Sqllite | EchoFramework | Elastic APM | ZAP Logger | Docker 
 
-[![<techievee>](https://circleci.com/gh/techievee/xero.svg?style=svg)](<LINK>)
+[![<techievee>](https://circleci.com/gh/techievee/xero.svg?style=svg)](<https://circleci.com/gh/techievee/xero>)
 
 To Run the pre-built docker image, that automatically builds with every new push
 ```
